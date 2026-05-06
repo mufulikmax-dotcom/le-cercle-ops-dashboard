@@ -1,0 +1,17 @@
+export const todoItems = [
+  "Import Excel Meniu Le Bureau - Working Version.xlsx",
+  "Import / map supplier price lists",
+  "Confirmare preț Bénédictine",
+  "Confirmare cost espresso per shot",
+  "Confirmare preț lime, lămâie, portocală, maracuja",
+  "Confirmare preț final North Ice",
+  "Test rețete signature cu ProMaestro",
+  "Definire rețetă finală The Smoked Letter",
+  "Definire welcome drink pentru Le Bureau Experience",
+  "Calcul sirop zahăr homemade",
+  "Calcul fresh / super juice",
+  "Completare inventar minim pentru primul eveniment",
+  "Definire pachete comerciale",
+  "Definire prețuri comerciale",
+  "Pregătire ofertă client",
+];

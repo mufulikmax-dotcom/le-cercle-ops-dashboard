@@ -1,12 +1,18 @@
 import {
   Boxes,
+  BriefcaseBusiness,
   Calculator,
   CalendarDays,
+  Compass,
+  FileText,
   FlaskConical,
   LayoutDashboard,
+  ListChecks,
   Martini,
   Package,
+  ScrollText,
   ShoppingCart,
+  Sparkles,
   Truck,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -21,7 +27,37 @@ export const navItems: NavItem[] = [
   {
     href: "/",
     icon: LayoutDashboard,
-    label: "Panou de control",
+    label: "Dashboard",
+  },
+  {
+    href: "/project",
+    icon: Compass,
+    label: "Proiect",
+  },
+  {
+    href: "/directions",
+    icon: Sparkles,
+    label: "Direcții",
+  },
+  {
+    href: "/commercial-products",
+    icon: BriefcaseBusiness,
+    label: "Produse Comerciale",
+  },
+  {
+    href: "/launch-event",
+    icon: CalendarDays,
+    label: "Eveniment Lansare",
+  },
+  {
+    href: "/le-bureau-story",
+    icon: ScrollText,
+    label: "Le Bureau Story",
+  },
+  {
+    href: "/documents",
+    icon: FileText,
+    label: "Documente",
   },
   {
     href: "/suppliers",
@@ -41,17 +77,17 @@ export const navItems: NavItem[] = [
   {
     href: "/cocktail-costing",
     icon: Calculator,
-    label: "Costuri cocktailuri",
+    label: "Costing Cocktailuri",
   },
   {
     href: "/internal-preparations",
     icon: FlaskConical,
-    label: "Preparări interne",
+    label: "Preparate Interne",
   },
   {
     href: "/inventory-consumables",
     icon: Boxes,
-    label: "Inventar & consumabile",
+    label: "Inventar & Consumabile",
   },
   {
     href: "/events",
@@ -61,6 +97,11 @@ export const navItems: NavItem[] = [
   {
     href: "/shopping-lists",
     icon: ShoppingCart,
-    label: "Liste cumpărături",
+    label: "Shopping Lists",
+  },
+  {
+    href: "/todo",
+    icon: ListChecks,
+    label: "To Do / De Completat",
   },
 ];

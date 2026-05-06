@@ -1,27 +1,30 @@
 # Le Cercle Ops Dashboard
 
-Internal operations system for Le Cercle Group and Le Bureau experience events.
-The current interface is a local empty state prepared for real data entry or
-future Excel/CSV import.
+Sistem operațional intern pentru Le Cercle Group și Le Bureau experience events.
+Interfața curentă este pregătită pentru date reale, completare manuală și import
+Excel/CSV ulterior.
 
-## Tech Stack
+Aplicația nu folosește date operaționale inventate. Câmpurile goale indică date
+care trebuie verificate, completate sau importate.
+
+## Tehnologii
 
 - Next.js App Router
 - TypeScript
 - Tailwind CSS
 
-## Local Development
+## Dezvoltare locală
 
-Install dependencies:
+Instalează dependențele:
 
 ```bash
 npm install
 ```
 
-Start the development server:
+Pornește serverul local:
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Deschide [http://localhost:3000](http://localhost:3000).

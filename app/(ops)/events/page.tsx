@@ -1,6 +1,15 @@
-import { SectionPage } from "@/components/section-page";
-import { sectionPages } from "@/lib/page-content";
+import { ModuleTablePage } from "@/components/module-table-page";
+import { eventColumns, eventRows } from "@/data/modules";
 
 export default function EventsPage() {
-  return <SectionPage page={sectionPages.events} />;
+  return (
+    <ModuleTablePage
+      columns={eventColumns}
+      description="Evenimentele reale ale sistemului, fără date demonstrative."
+      eyebrow="Evenimente"
+      rows={eventRows}
+      tableTitle="Evenimente"
+      title="Evenimente"
+    />
+  );
 }

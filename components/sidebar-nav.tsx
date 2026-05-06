@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { navItems } from "@/lib/navigation";
+import { navItems } from "@/data/navigation";
 import { cn } from "@/lib/utils";
 
 type SidebarNavProps = {
@@ -53,7 +53,7 @@ export function SidebarNav({ variant }: SidebarNavProps) {
   }
 
   return (
-    <div className="flex h-full flex-col px-5 py-6">
+    <div className="flex min-h-full flex-col px-5 py-6">
       <div className="border-b border-brass/15 pb-7">
         <p className="font-display text-3xl text-parchment">Le Cercle</p>
         <p className="mt-3 text-xs uppercase tracking-[0.22em] text-brass">
@@ -73,7 +73,7 @@ export function SidebarNav({ variant }: SidebarNavProps) {
             <Link
               aria-current={active ? "page" : undefined}
               className={cn(
-                "group flex min-h-11 items-center gap-3 rounded-md border border-transparent px-3 text-sm text-pewter transition",
+                "group flex min-h-10 items-center gap-3 rounded-md border border-transparent px-3 py-1 text-sm text-pewter transition",
                 active
                   ? "border-brass/35 bg-brass/10 text-parchment shadow-soft-lift"
                   : "hover:border-brass/20 hover:bg-smoke/50 hover:text-parchment",

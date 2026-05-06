@@ -1,6 +1,15 @@
-import { SectionPage } from "@/components/section-page";
-import { sectionPages } from "@/lib/page-content";
+import { ModuleTablePage } from "@/components/module-table-page";
+import { supplierColumns, supplierRows } from "@/data/modules";
 
 export default function SuppliersPage() {
-  return <SectionPage page={sectionPages.suppliers} />;
+  return (
+    <ModuleTablePage
+      columns={supplierColumns}
+      description="Furnizori confirmați ca surse de lucru, fără prețuri inventate."
+      eyebrow="Achiziții"
+      rows={supplierRows}
+      tableTitle="Furnizori"
+      title="Furnizori"
+    />
+  );
 }

@@ -3,7 +3,7 @@ import { SidebarNav } from "@/components/sidebar-nav";
 export function OpsShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-night text-parchment">
-      <aside className="fixed inset-y-0 left-0 hidden w-72 border-r border-brass/15 bg-ink/95 lg:block">
+      <aside className="fixed inset-y-0 left-0 hidden w-72 overflow-y-auto border-r border-brass/15 bg-ink/95 lg:block">
         <SidebarNav variant="desktop" />
       </aside>
 
