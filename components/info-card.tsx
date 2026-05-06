@@ -12,7 +12,7 @@ export function InfoCard({
   title: string;
 }) {
   return (
-    <article className="border border-brass/15 bg-ink p-5">
+    <article className="rounded-md bg-ink/80 p-6 shadow-[0_22px_70px_rgba(0,0,0,0.22)] ring-1 ring-white/[0.03]">
       <div className="flex items-start justify-between gap-4">
         <h2 className="font-display text-2xl leading-tight text-parchment">
           {title}

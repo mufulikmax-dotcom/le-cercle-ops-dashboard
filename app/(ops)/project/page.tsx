@@ -5,7 +5,7 @@ import { projectBlocks } from "@/data/project";
 
 export default function ProjectPage() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       <PageHeader
         description="Structura strategică a conceptului Le Cercle și logica modulară de vânzare."
         eyebrow="Concept"

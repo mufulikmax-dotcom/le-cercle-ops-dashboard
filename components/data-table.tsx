@@ -32,13 +32,13 @@ export function DataTable<T extends object>({
 }: DataTableProps<T>) {
   if (rows.length === 0) {
     return (
-      <div className="overflow-hidden border border-brass/15 bg-ink">
+      <div className="overflow-hidden rounded-md bg-ink/75 shadow-[0_22px_70px_rgba(0,0,0,0.2)] ring-1 ring-white/[0.03]">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[760px] border-collapse text-left text-sm">
             <thead>
-              <tr className="border-b border-brass/15 text-xs uppercase tracking-[0.16em] text-pewter">
+              <tr className="bg-night/45 text-xs uppercase tracking-[0.16em] text-pewter">
                 {columns.map((column) => (
-                  <th className="px-5 py-4 font-medium" key={column.key}>
+                  <th className="px-6 py-4 font-medium" key={column.key}>
                     {column.label}
                   </th>
                 ))}
@@ -52,13 +52,13 @@ export function DataTable<T extends object>({
   }
 
   return (
-    <div className="overflow-hidden border border-brass/15 bg-ink">
+    <div className="overflow-hidden rounded-md bg-ink/75 shadow-[0_22px_70px_rgba(0,0,0,0.2)] ring-1 ring-white/[0.03]">
       <div className="overflow-x-auto">
         <table className="w-full min-w-[760px] border-collapse text-left text-sm">
           <thead>
-            <tr className="border-b border-brass/15 text-xs uppercase tracking-[0.16em] text-pewter">
+            <tr className="bg-night/45 text-xs uppercase tracking-[0.16em] text-pewter">
               {columns.map((column) => (
-                <th className="px-5 py-4 font-medium" key={column.key}>
+                <th className="px-6 py-4 font-medium" key={column.key}>
                   {column.label}
                 </th>
               ))}
@@ -67,12 +67,12 @@ export function DataTable<T extends object>({
           <tbody>
             {rows.map((row, index) => (
               <tr
-                className="border-b border-brass/10 last:border-0"
+                className="border-b border-white/[0.04] last:border-0 hover:bg-parchment/[0.02]"
                 key={getRowKey ? getRowKey(row, index) : `${index}`}
               >
                 {columns.map((column) => (
                   <td
-                    className="px-5 py-4 align-top text-pewter first:text-parchment"
+                    className="px-6 py-4 align-top text-pewter first:text-parchment"
                     key={column.key}
                   >
                     {renderCell(column, row)}

@@ -5,7 +5,7 @@ import { documentColumns, documentRows } from "@/data/documents";
 
 export default function DocumentsPage() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       <PageHeader
         description="Index operațional pentru documentele confirmate ale proiectului."
         eyebrow="Documente"

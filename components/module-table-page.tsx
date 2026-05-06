@@ -22,10 +22,10 @@ export function ModuleTablePage<T extends object>({
   title: string;
 }) {
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       <PageHeader description={description} eyebrow={eyebrow} title={title} />
       <Section title={tableTitle}>
-        <div className="flex flex-col justify-between gap-4 border border-brass/15 bg-ink p-5 sm:flex-row sm:items-center">
+        <div className="flex flex-col justify-between gap-5 rounded-md bg-ink/55 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.18)] ring-1 ring-white/[0.03] sm:flex-row sm:items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.18em] text-pewter">
               Operare

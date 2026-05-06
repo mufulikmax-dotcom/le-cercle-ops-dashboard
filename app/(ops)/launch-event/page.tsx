@@ -15,7 +15,7 @@ import {
 
 export default function LaunchEventPage() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       <PageHeader
         description="Date confirmate pentru evenimentul oficial de lansare Le Cercle."
         eyebrow="Lansare"

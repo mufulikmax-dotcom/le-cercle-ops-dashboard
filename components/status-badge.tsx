@@ -1,18 +1,18 @@
 import { cn } from "@/lib/utils";
 
 const statusStyles: Record<string, string> = {
-  current: "border-moss/60 bg-moss/35 text-parchment",
-  definit: "border-moss/60 bg-moss/35 text-parchment",
-  "costing în lucru": "border-ember/60 bg-ember/20 text-parchment",
-  "de completat": "border-brass/25 bg-night text-pewter",
-  "de confirmat cu north ice": "border-ember/60 bg-ember/20 text-parchment",
-  "de dezvoltat": "border-brass/35 bg-brass/10 text-brass",
-  "de validat": "border-brass/35 bg-brass/10 text-brass",
-  "de verificat": "border-brass/25 bg-night text-pewter",
-  "import necesar": "border-brass/35 bg-brass/10 text-brass",
-  "în lucru": "border-ember/60 bg-ember/20 text-parchment",
-  "în planificare": "border-ember/60 bg-ember/20 text-parchment",
-  "schiță / de dezvoltat": "border-brass/35 bg-brass/10 text-brass",
+  current: "bg-moss/45 text-parchment",
+  definit: "bg-moss/45 text-parchment",
+  "costing în lucru": "bg-ember/25 text-parchment",
+  "de completat": "bg-night/65 text-pewter",
+  "de confirmat cu north ice": "bg-ember/25 text-parchment",
+  "de dezvoltat": "bg-brass/12 text-brass",
+  "de validat": "bg-brass/12 text-brass",
+  "de verificat": "bg-night/65 text-pewter",
+  "import necesar": "bg-brass/12 text-brass",
+  "în lucru": "bg-ember/25 text-parchment",
+  "în planificare": "bg-ember/25 text-parchment",
+  "schiță / de dezvoltat": "bg-brass/12 text-brass",
 };
 
 export function StatusBadge({ status }: { status: string }) {
@@ -21,8 +21,8 @@ export function StatusBadge({ status }: { status: string }) {
   return (
     <span
       className={cn(
-        "inline-flex min-h-7 items-center rounded-md border px-2.5 text-xs font-medium",
-        statusStyles[key] ?? "border-brass/25 bg-night text-pewter",
+        "inline-flex min-h-7 items-center rounded-md px-2.5 text-xs font-medium",
+        statusStyles[key] ?? "bg-night/65 text-pewter",
       )}
     >
       {status}

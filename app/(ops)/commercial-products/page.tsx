@@ -5,7 +5,7 @@ import { commercialProducts } from "@/data/directions";
 
 export default function CommercialProductsPage() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       <PageHeader
         description="Produse comerciale modulare care pot fi vândute separat sau integrate într-un concept complet."
         eyebrow="Vânzare modulară"

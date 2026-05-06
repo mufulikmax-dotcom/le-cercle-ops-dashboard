@@ -5,7 +5,7 @@ import { leBureauActs } from "@/data/story";
 
 export default function LeBureauStoryPage() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       <PageHeader
         description="Voiceover și structură narativă pentru prezentarea Le Bureau."
         eyebrow="Storytelling"

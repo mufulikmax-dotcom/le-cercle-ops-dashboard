@@ -8,7 +8,7 @@ export function ImportActions({
   return (
     <div className="flex flex-col gap-2 sm:flex-row">
       <button
-        className="inline-flex min-h-10 cursor-not-allowed items-center justify-center gap-2 rounded-md border border-brass/20 bg-brass/10 px-4 text-sm text-pewter/75"
+        className="inline-flex min-h-10 cursor-not-allowed items-center justify-center gap-2 rounded-md bg-brass/10 px-4 text-sm text-pewter/75 shadow-[inset_0_0_0_1px_rgba(200,169,106,0.12)]"
         disabled
         type="button"
       >
@@ -16,7 +16,7 @@ export function ImportActions({
         {addLabel}
       </button>
       <button
-        className="inline-flex min-h-10 cursor-not-allowed items-center justify-center gap-2 rounded-md border border-brass/15 px-4 text-sm text-pewter/70"
+        className="inline-flex min-h-10 cursor-not-allowed items-center justify-center gap-2 rounded-md bg-night/55 px-4 text-sm text-pewter/70 shadow-[inset_0_0_0_1px_rgba(244,234,215,0.05)]"
         disabled
         type="button"
       >

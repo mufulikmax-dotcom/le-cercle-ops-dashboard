@@ -5,7 +5,7 @@ import { directions } from "@/data/directions";
 
 export default function DirectionsPage() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       <PageHeader
         description="Cele patru zone care creează atmosferă, ritual, interacțiune și valoare vizuală în eveniment."
         eyebrow="Direcții"

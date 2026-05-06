@@ -5,7 +5,7 @@ import { todoItems } from "@/data/todo";
 
 export default function TodoPage() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       <PageHeader
         description="Listă de acțiuni care trebuie completate înainte de operare cu date reale."
         eyebrow="Control operațional"

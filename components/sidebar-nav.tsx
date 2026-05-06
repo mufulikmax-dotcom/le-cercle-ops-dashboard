@@ -35,10 +35,10 @@ export function SidebarNav({ variant }: SidebarNavProps) {
             <Link
               aria-current={active ? "page" : undefined}
               className={cn(
-                "flex shrink-0 items-center gap-2 rounded-md border px-3 py-2 text-sm transition",
+                "flex shrink-0 items-center gap-2 rounded-md px-3 py-2 text-sm transition",
                 active
-                  ? "border-brass/60 bg-brass/12 text-parchment"
-                  : "border-brass/15 bg-ink text-pewter hover:border-brass/35 hover:text-parchment",
+                  ? "bg-brass/12 text-parchment"
+                  : "bg-ink/80 text-pewter hover:bg-smoke/55 hover:text-parchment",
               )}
               href={item.href}
               key={item.href}
@@ -54,7 +54,7 @@ export function SidebarNav({ variant }: SidebarNavProps) {
 
   return (
     <div className="flex min-h-full flex-col px-5 py-6">
-      <div className="border-b border-brass/15 pb-7">
+      <div className="pb-8">
         <p className="font-display text-3xl text-parchment">Le Cercle</p>
         <p className="mt-3 text-xs uppercase tracking-[0.22em] text-brass">
           Sistem operațional
@@ -73,20 +73,20 @@ export function SidebarNav({ variant }: SidebarNavProps) {
             <Link
               aria-current={active ? "page" : undefined}
               className={cn(
-                "group flex min-h-10 items-center gap-3 rounded-md border border-transparent px-3 py-1 text-sm text-pewter transition",
+                "group flex min-h-10 items-center gap-3 rounded-md px-3 py-1 text-sm text-pewter transition",
                 active
-                  ? "border-brass/35 bg-brass/10 text-parchment shadow-soft-lift"
-                  : "hover:border-brass/20 hover:bg-smoke/50 hover:text-parchment",
+                  ? "bg-smoke/75 text-parchment shadow-[0_12px_40px_rgba(0,0,0,0.2)]"
+                  : "hover:bg-smoke/45 hover:text-parchment",
               )}
               href={item.href}
               key={item.href}
             >
               <span
                 className={cn(
-                  "flex h-8 w-8 items-center justify-center rounded-md border transition",
+                  "flex h-8 w-8 items-center justify-center rounded-md transition",
                   active
-                    ? "border-brass/50 bg-brass/12 text-brass"
-                    : "border-brass/15 bg-night text-pewter group-hover:border-brass/35 group-hover:text-brass",
+                    ? "bg-brass/12 text-brass"
+                    : "bg-night/55 text-pewter group-hover:text-brass",
                 )}
               >
                 <Icon aria-hidden="true" className="h-4 w-4" />
@@ -97,7 +97,7 @@ export function SidebarNav({ variant }: SidebarNavProps) {
         })}
       </nav>
 
-      <div className="border-t border-brass/15 pt-5">
+      <div className="pt-6">
         <p className="text-xs uppercase tracking-[0.18em] text-pewter">
           Sistem privat
         </p>
