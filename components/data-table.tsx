@@ -34,7 +34,7 @@ export function DataTable<T extends object>({
     return (
       <div className="overflow-hidden rounded-md bg-ink/75 shadow-[0_22px_70px_rgba(0,0,0,0.2)] ring-1 ring-white/[0.03]">
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[760px] border-collapse text-left text-sm">
+          <table className="w-full min-w-[760px] border-separate border-spacing-y-1 text-left text-sm">
             <thead>
               <tr className="bg-night/45 text-xs uppercase tracking-[0.16em] text-pewter">
                 {columns.map((column) => (
@@ -54,7 +54,7 @@ export function DataTable<T extends object>({
   return (
     <div className="overflow-hidden rounded-md bg-ink/75 shadow-[0_22px_70px_rgba(0,0,0,0.2)] ring-1 ring-white/[0.03]">
       <div className="overflow-x-auto">
-        <table className="w-full min-w-[760px] border-collapse text-left text-sm">
+        <table className="w-full min-w-[760px] border-separate border-spacing-y-1 text-left text-sm">
           <thead>
             <tr className="bg-night/45 text-xs uppercase tracking-[0.16em] text-pewter">
               {columns.map((column) => (
@@ -67,12 +67,12 @@ export function DataTable<T extends object>({
           <tbody>
             {rows.map((row, index) => (
               <tr
-                className="border-b border-white/[0.04] last:border-0 hover:bg-parchment/[0.02]"
+                className="bg-night/[0.18] transition hover:bg-parchment/[0.025]"
                 key={getRowKey ? getRowKey(row, index) : `${index}`}
               >
                 {columns.map((column) => (
                   <td
-                    className="px-6 py-4 align-top text-pewter first:text-parchment"
+                    className="px-6 py-4 align-top text-pewter first:rounded-l-md first:text-parchment last:rounded-r-md"
                     key={column.key}
                   >
                     {renderCell(column, row)}

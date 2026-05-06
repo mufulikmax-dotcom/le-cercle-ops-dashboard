@@ -4,6 +4,7 @@ import {
   Calculator,
   CalendarDays,
   Compass,
+  Database,
   FileText,
   FlaskConical,
   LayoutDashboard,
@@ -58,6 +59,11 @@ export const navItems: NavItem[] = [
     href: "/documents",
     icon: FileText,
     label: "Documente",
+  },
+  {
+    href: "/data-sources",
+    icon: Database,
+    label: "Surse de date",
   },
   {
     href: "/suppliers",

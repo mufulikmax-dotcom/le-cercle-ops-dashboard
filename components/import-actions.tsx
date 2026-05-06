@@ -13,7 +13,7 @@ export function ImportActions({
         type="button"
       >
         <Plus aria-hidden="true" className="h-4 w-4" />
-        {addLabel}
+        {addLabel} (în dezvoltare)
       </button>
       <button
         className="inline-flex min-h-10 cursor-not-allowed items-center justify-center gap-2 rounded-md bg-night/55 px-4 text-sm text-pewter/70 shadow-[inset_0_0_0_1px_rgba(244,234,215,0.05)]"
@@ -21,7 +21,7 @@ export function ImportActions({
         type="button"
       >
         <Upload aria-hidden="true" className="h-4 w-4" />
-        Import Excel/CSV (în curând)
+        Import Excel/CSV (în dezvoltare)
       </button>
     </div>
   );
