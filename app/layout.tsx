@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Le Cercle Ops Dashboard",
   description:
-    "Internal operations dashboard for Le Cercle Group and Le Bureau experience events.",
+    "Sistem operațional intern pentru Le Cercle Group și Le Bureau experience events.",
 };
 
 export default function RootLayout({

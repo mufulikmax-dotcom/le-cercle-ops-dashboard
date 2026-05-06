@@ -1,7 +1,8 @@
 # Le Cercle Ops Dashboard
 
-Internal operations dashboard for Le Cercle Group and Le Bureau experience
-events.
+Internal operations system for Le Cercle Group and Le Bureau experience events.
+The current interface is a local empty state prepared for real data entry or
+future Excel/CSV import.
 
 ## Tech Stack
 

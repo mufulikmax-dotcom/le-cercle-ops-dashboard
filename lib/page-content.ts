@@ -1,427 +1,223 @@
-export type OpsPageContent = {
-  currentFocus: string;
+export type DashboardMetric = {
+  label: string;
+  value: string;
+};
+
+export type ModuleTable = {
+  columns: string[];
+  title: string;
+};
+
+export type DashboardPageContent = {
   description: string;
   eyebrow: string;
-  metrics: Array<{
-    label: string;
-    note: string;
-    value: string;
-  }>;
-  notes: string[];
-  table: {
-    caption: string;
-    columns: string[];
-    rows: string[][];
-    subtitle: string;
-    title: string;
-  };
+  kind: "dashboard";
+  message: string;
+  metrics: DashboardMetric[];
   title: string;
+};
+
+export type ModulePageContent = {
+  description: string;
+  eyebrow: string;
+  importLabel: string;
+  kind: "module";
+  notesLabel: string;
+  statusLabel: string;
+  table: ModuleTable;
+  title: string;
+};
+
+export type OpsPageContent = DashboardPageContent | ModulePageContent;
+
+const commonModuleFields = {
+  importLabel: "Import Excel/CSV",
+  notesLabel: "Note: De completat",
+  statusLabel: "Status: De completat",
 };
 
 export const sectionPages = {
   dashboard: {
-    currentFocus: "May event readiness and cost visibility",
     description:
-      "A calm operational overview for purchasing, recipes, inventory pressure, and upcoming Le Bureau experience events.",
+      "Punctul de pornire pentru operațiunile Le Cercle Group și Le Bureau. Datele afișate sunt starea locală inițială, fără integrare externă.",
     eyebrow: "Le Cercle Group",
+    kind: "dashboard",
+    message:
+      "Sistem pregătit pentru date reale. Următorul pas: import Excel sau introducere manuală.",
     metrics: [
       {
-        label: "Events this month",
-        note: "Private tastings, launches, and hosted brand moments.",
-        value: "8",
+        label: "Furnizori adăugați",
+        value: "0",
       },
       {
-        label: "Active suppliers",
-        note: "Approved partners across spirits, garnish, food, and service.",
-        value: "42",
+        label: "Produse confirmate",
+        value: "0",
       },
       {
-        label: "Open lists",
-        note: "Shopping lists awaiting review or confirmation.",
-        value: "5",
+        label: "Cocktailuri active",
+        value: "0",
       },
       {
-        label: "Stock alerts",
-        note: "Items under par level across inventory and consumables.",
-        value: "12",
+        label: "Ingrediente fără preț",
+        value: "0",
+      },
+      {
+        label: "Evenimente planificate",
+        value: "0",
       },
     ],
-    notes: [
-      "Review premium spirit allocations before the next Le Bureau tasting.",
-      "Confirm garnish prep ownership for weekend service.",
-      "Prioritize products with missing supplier and cost metadata.",
-    ],
-    table: {
-      caption: "Today",
-      columns: ["Area", "Owner", "Status", "Next Move"],
-      rows: [
-        ["Event prep", "Operations", "In review", "Confirm service quantities"],
-        ["Cocktail costs", "Bar lead", "Draft", "Validate ingredient pricing"],
-        ["Inventory", "Store room", "Attention", "Recount low stock items"],
-      ],
-      subtitle: "A concise view of current operational movement.",
-      title: "Service Priorities",
-    },
-    title: "Dashboard",
+    title: "Panou de control",
   },
   suppliers: {
-    currentFocus: "Preferred supplier coverage",
+    ...commonModuleFields,
     description:
-      "Supplier records for beverage, garnish, dry goods, disposables, and event service partners.",
-    eyebrow: "Procurement",
-    metrics: [
-      {
-        label: "Approved",
-        note: "Ready for recurring orders.",
-        value: "28",
-      },
-      {
-        label: "Needs terms",
-        note: "Payment or delivery conditions pending.",
-        value: "6",
-      },
-      {
-        label: "Special order",
-        note: "Used for event-led procurement.",
-        value: "8",
-      },
-      {
-        label: "Lead time risk",
-        note: "Requires earlier confirmation.",
-        value: "3",
-      },
-    ],
-    notes: [
-      "Group suppliers by category before adding purchase history.",
-      "Keep contact, terms, lead time, and minimum order data together.",
-      "Flag suppliers suitable for high-touch private events.",
-    ],
+      "Registru pentru furnizorii reali ai grupului, pregătit pentru completare manuală sau import ulterior.",
+    eyebrow: "Achiziții",
+    kind: "module",
     table: {
-      caption: "Sample",
-      columns: ["Supplier", "Category", "Terms", "Status"],
-      rows: [
-        ["Maison Spirits", "Premium spirits", "Net 14", "Approved"],
-        ["Atelier Citrus", "Fresh garnish", "COD", "Needs backup"],
-        ["Noir Service", "Event staffing", "Contract", "Preferred"],
+      columns: [
+        "Denumire furnizor",
+        "Categorie",
+        "Persoană contact",
+        "Telefon / email",
+        "Status",
+        "Note",
       ],
-      subtitle: "Representative supplier rows for the initial structure.",
-      title: "Supplier Directory",
+      title: "Structură furnizori",
     },
-    title: "Suppliers",
+    title: "Furnizori",
   },
   products: {
-    currentFocus: "Clean product metadata",
+    ...commonModuleFields,
     description:
-      "A product catalogue for spirits, modifiers, garnish, dry stock, and event consumables.",
-    eyebrow: "Catalogue",
-    metrics: [
-      {
-        label: "Listed products",
-        note: "Initial operating catalogue.",
-        value: "186",
-      },
-      {
-        label: "Missing cost",
-        note: "Needs pricing before costing is reliable.",
-        value: "21",
-      },
-      {
-        label: "Event-only",
-        note: "Reserved for bespoke experiences.",
-        value: "14",
-      },
-      {
-        label: "Archived",
-        note: "No longer used in active menus.",
-        value: "9",
-      },
-    ],
-    notes: [
-      "Separate purchase unit, recipe unit, and counting unit.",
-      "Add category, supplier, pack size, and tax treatment early.",
-      "Use product records as the source for cocktail costing.",
-    ],
+      "Catalog gol pentru produse reale, unități de lucru și status de confirmare.",
+    eyebrow: "Catalog",
+    kind: "module",
     table: {
-      caption: "Draft",
-      columns: ["Product", "Type", "Unit", "Cost State"],
-      rows: [
-        ["Single malt reserve", "Spirit", "700 ml", "Confirmed"],
-        ["House vermouth", "Modifier", "1 l", "Needs update"],
-        ["Smoked almonds", "Consumable", "1 kg", "Draft"],
+      columns: [
+        "Denumire produs",
+        "Categorie",
+        "Furnizor",
+        "Unitate",
+        "Status",
+        "Note",
       ],
-      subtitle: "Core product fields before inventory integration.",
-      title: "Product Register",
+      title: "Structură produse",
     },
-    title: "Products",
+    title: "Produse",
   },
   cocktails: {
-    currentFocus: "Signature and event menus",
+    ...commonModuleFields,
     description:
-      "Cocktail specifications for house serves, private member moments, and Le Bureau event menus.",
-    eyebrow: "Beverage Program",
-    metrics: [
-      {
-        label: "Active serves",
-        note: "Ready for menu or event use.",
-        value: "34",
-      },
-      {
-        label: "In development",
-        note: "Recipe, garnish, or method still moving.",
-        value: "7",
-      },
-      {
-        label: "Event signatures",
-        note: "Built for private experiences.",
-        value: "11",
-      },
-      {
-        label: "Needs image",
-        note: "Visual reference pending.",
-        value: "16",
-      },
-    ],
-    notes: [
-      "Keep method, glassware, garnish, and batch notes close to the recipe.",
-      "Connect each cocktail to costing once ingredient data is stable.",
-      "Reserve event-specific variants without duplicating the base serve.",
-    ],
+      "Bibliotecă pregătită pentru cocktailuri reale, fără rețete sau ingrediente inventate.",
+    eyebrow: "Program bar",
+    kind: "module",
     table: {
-      caption: "Menu",
-      columns: ["Cocktail", "Style", "Glass", "Status"],
-      rows: [
-        ["Cercle Old Fashioned", "Stirred", "Rocks", "Active"],
-        ["Bureau Highball", "Built", "Highball", "In development"],
-        ["Velvet Martinez", "Stirred", "Nick & Nora", "Active"],
+      columns: [
+        "Nume cocktail",
+        "Categorie",
+        "Status meniu",
+        "Responsabil",
+        "Status",
+        "Note",
       ],
-      subtitle: "Representative recipe records for the cocktail library.",
-      title: "Cocktail Library",
+      title: "Structură cocktailuri",
     },
-    title: "Cocktails",
+    title: "Cocktailuri",
   },
   cocktailCosting: {
-    currentFocus: "Reliable margin view",
+    ...commonModuleFields,
     description:
-      "Ingredient-level costing for cocktails, batches, garnishes, and premium event serves.",
-    eyebrow: "Cost Control",
-    metrics: [
-      {
-        label: "Costed recipes",
-        note: "Recipes with complete ingredient pricing.",
-        value: "23",
-      },
-      {
-        label: "Needs product link",
-        note: "Ingredient mapping still incomplete.",
-        value: "9",
-      },
-      {
-        label: "Target margin",
-        note: "Default benchmark for premium serves.",
-        value: "78%",
-      },
-      {
-        label: "High variance",
-        note: "Recipes needing cost review.",
-        value: "4",
-      },
-    ],
-    notes: [
-      "Cost recipes from product unit conversions, not manual recipe estimates.",
-      "Keep garnish, wastage, and batch yield visible in the model.",
-      "Add selling price scenarios after base recipe costs are trusted.",
-    ],
+      "Spațiu gol pentru costare, pregătit să folosească doar ingrediente și prețuri reale.",
+    eyebrow: "Control costuri",
+    kind: "module",
     table: {
-      caption: "Margin",
-      columns: ["Serve", "Cost", "Price", "Margin"],
-      rows: [
-        ["Cercle Old Fashioned", "4.80", "22.00", "78%"],
-        ["Velvet Martinez", "5.40", "24.00", "77%"],
-        ["Bureau Highball", "3.20", "18.00", "82%"],
+      columns: [
+        "Cocktail",
+        "Ingrediente",
+        "Ingrediente fără preț",
+        "Status costare",
+        "Validat de",
+        "Note",
       ],
-      subtitle: "A simple placeholder for future costing calculations.",
-      title: "Costing Snapshot",
+      title: "Structură costare cocktailuri",
     },
-    title: "Cocktail Costing",
+    title: "Costuri cocktailuri",
   },
   internalPreparations: {
-    currentFocus: "Prep accountability",
+    ...commonModuleFields,
     description:
-      "Internal recipes and prep runs for syrups, infusions, batches, garnishes, and event mise en place.",
-    eyebrow: "Prep Kitchen",
-    metrics: [
-      {
-        label: "Active preps",
-        note: "Used across cocktails and events.",
-        value: "18",
-      },
-      {
-        label: "Due today",
-        note: "Prepared before service or load-out.",
-        value: "5",
-      },
-      {
-        label: "Shelf life risk",
-        note: "Needs date or batch review.",
-        value: "3",
-      },
-      {
-        label: "Batch recipes",
-        note: "Ready for yield tracking.",
-        value: "10",
-      },
-    ],
-    notes: [
-      "Track batch yield, shelf life, production date, and owner together.",
-      "Connect prep outputs to cocktail recipes as reusable ingredients.",
-      "Use prep status to prevent last-minute event purchasing.",
-    ],
+      "Modul pentru preparări interne reale: siropuri, batch-uri, infuzii și mise en place.",
+    eyebrow: "Preparări",
+    kind: "module",
     table: {
-      caption: "Prep",
-      columns: ["Preparation", "Yield", "Owner", "Status"],
-      rows: [
-        ["Demerara syrup", "2 l", "Bar prep", "Ready"],
-        ["Citrus stock", "1.5 l", "Kitchen", "Due today"],
-        ["Smoked tea infusion", "900 ml", "Bar lead", "Testing"],
+      columns: [
+        "Preparare",
+        "Tip",
+        "Unitate / randament",
+        "Responsabil",
+        "Status",
+        "Note",
       ],
-      subtitle: "Core prep records before production scheduling.",
-      title: "Preparation Log",
+      title: "Structură preparări interne",
     },
-    title: "Internal Preparations",
+    title: "Preparări interne",
   },
   inventoryConsumables: {
-    currentFocus: "Par levels and event drawdowns",
+    ...commonModuleFields,
     description:
-      "Inventory and consumables tracking for stock pressure, event allocation, and replenishment planning.",
-    eyebrow: "Stock Control",
-    metrics: [
-      {
-        label: "Under par",
-        note: "Needs purchase or transfer review.",
-        value: "12",
-      },
-      {
-        label: "Counted today",
-        note: "Items touched in the latest count.",
-        value: "64",
-      },
-      {
-        label: "Consumables",
-        note: "Napkins, glassware support, disposables, and dry goods.",
-        value: "47",
-      },
-      {
-        label: "Event reserved",
-        note: "Stock allocated to upcoming experiences.",
-        value: "19",
-      },
-    ],
-    notes: [
-      "Track par, current count, reserved quantity, and reorder threshold.",
-      "Separate consumables from beverage stock while sharing supplier records.",
-      "Prepare for event drawdowns before detailed warehouse flows.",
-    ],
+      "Inventar gol pentru articole reale, consumabile și locații de stocare.",
+    eyebrow: "Stocuri",
+    kind: "module",
     table: {
-      caption: "Count",
-      columns: ["Item", "On Hand", "Par", "State"],
-      rows: [
-        ["Reserve bourbon", "6", "8", "Under par"],
-        ["Linen cocktail napkins", "220", "180", "Healthy"],
-        ["Clear ice blocks", "18", "24", "Reorder"],
+      columns: [
+        "Articol",
+        "Categorie",
+        "Unitate de numărare",
+        "Locație",
+        "Status",
+        "Note",
       ],
-      subtitle: "A compact stock view for operational decisions.",
-      title: "Inventory Pulse",
+      title: "Structură inventar & consumabile",
     },
-    title: "Inventory & Consumables",
+    title: "Inventar & consumabile",
   },
   events: {
-    currentFocus: "Le Bureau calendar readiness",
+    ...commonModuleFields,
     description:
-      "Event planning for private tastings, brand moments, hosted dinners, and members club experiences.",
-    eyebrow: "Experience Operations",
-    metrics: [
-      {
-        label: "Upcoming",
-        note: "Confirmed events in the working calendar.",
-        value: "8",
-      },
-      {
-        label: "Needs menu",
-        note: "Menu or serve list not yet locked.",
-        value: "3",
-      },
-      {
-        label: "Procurement open",
-        note: "Items still moving through lists.",
-        value: "5",
-      },
-      {
-        label: "Staffing review",
-        note: "Service assignments pending.",
-        value: "2",
-      },
-    ],
-    notes: [
-      "Keep menu, guest count, service style, and load-out notes visible.",
-      "Link event requirements to shopping lists and inventory reservations.",
-      "Add premium client preferences after the operational base is stable.",
-    ],
+      "Calendar operațional gol pentru evenimente Le Cercle și Le Bureau, fără evenimente demonstrative.",
+    eyebrow: "Evenimente",
+    kind: "module",
     table: {
-      caption: "Calendar",
-      columns: ["Event", "Date", "Guests", "Readiness"],
-      rows: [
-        ["Private whiskey tasting", "May 14", "24", "Menu review"],
-        ["Founder dinner", "May 21", "18", "Procurement open"],
-        ["Brand salon", "May 28", "40", "Service plan"],
+      columns: [
+        "Nume eveniment",
+        "Dată",
+        "Locație",
+        "Responsabil",
+        "Status",
+        "Note",
       ],
-      subtitle: "Upcoming experience events and readiness state.",
-      title: "Event Pipeline",
+      title: "Structură evenimente",
     },
-    title: "Events",
+    title: "Evenimente",
   },
   shoppingLists: {
-    currentFocus: "Purchase list discipline",
+    ...commonModuleFields,
     description:
-      "Shopping lists for regular replenishment, event-specific buying, and consumable restock planning.",
-    eyebrow: "Purchasing",
-    metrics: [
-      {
-        label: "Open lists",
-        note: "Awaiting review, order, or receiving.",
-        value: "5",
-      },
-      {
-        label: "Event lists",
-        note: "Tied to upcoming Le Bureau experiences.",
-        value: "3",
-      },
-      {
-        label: "Needs approval",
-        note: "Cost or quantity requires signoff.",
-        value: "2",
-      },
-      {
-        label: "Ready to order",
-        note: "Can be sent to supplier.",
-        value: "4",
-      },
-    ],
-    notes: [
-      "Generate lists from event needs, inventory gaps, and manual additions.",
-      "Group by supplier once product data is connected.",
-      "Track approval, ordering, and receiving without adding accounting scope yet.",
-    ],
+      "Liste de cumpărături pregătite pentru necesar real, import și completare manuală.",
+    eyebrow: "Cumpărături",
+    kind: "module",
     table: {
-      caption: "Purchasing",
-      columns: ["List", "Source", "Owner", "Status"],
-      rows: [
-        ["May 14 tasting", "Event", "Operations", "Needs approval"],
-        ["Weekly garnish", "Par level", "Bar prep", "Ready"],
-        ["Glassware support", "Manual", "Events", "Draft"],
+      columns: [
+        "Listă",
+        "Sursă",
+        "Furnizor",
+        "Responsabil",
+        "Status",
+        "Note",
       ],
-      subtitle: "Initial purchasing workflow placeholders.",
-      title: "Shopping Lists",
+      title: "Structură liste cumpărături",
     },
-    title: "Shopping Lists",
+    title: "Liste cumpărături",
   },
 } satisfies Record<string, OpsPageContent>;

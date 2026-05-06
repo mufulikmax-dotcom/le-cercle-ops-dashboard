@@ -12,7 +12,7 @@ export function OpsShell({ children }: { children: React.ReactNode }) {
           <div className="px-4 py-4">
             <p className="font-display text-xl text-parchment">Le Cercle</p>
             <p className="mt-1 text-xs uppercase tracking-[0.18em] text-pewter">
-              Operations Dashboard
+              Sistem operațional
             </p>
           </div>
           <SidebarNav variant="mobile" />

@@ -21,46 +21,46 @@ export const navItems: NavItem[] = [
   {
     href: "/",
     icon: LayoutDashboard,
-    label: "Dashboard",
+    label: "Panou de control",
   },
   {
     href: "/suppliers",
     icon: Truck,
-    label: "Suppliers",
+    label: "Furnizori",
   },
   {
     href: "/products",
     icon: Package,
-    label: "Products",
+    label: "Produse",
   },
   {
     href: "/cocktails",
     icon: Martini,
-    label: "Cocktails",
+    label: "Cocktailuri",
   },
   {
     href: "/cocktail-costing",
     icon: Calculator,
-    label: "Cocktail Costing",
+    label: "Costuri cocktailuri",
   },
   {
     href: "/internal-preparations",
     icon: FlaskConical,
-    label: "Internal Preparations",
+    label: "Preparări interne",
   },
   {
     href: "/inventory-consumables",
     icon: Boxes,
-    label: "Inventory & Consumables",
+    label: "Inventar & consumabile",
   },
   {
     href: "/events",
     icon: CalendarDays,
-    label: "Events",
+    label: "Evenimente",
   },
   {
     href: "/shopping-lists",
     icon: ShoppingCart,
-    label: "Shopping Lists",
+    label: "Liste cumpărături",
   },
 ];

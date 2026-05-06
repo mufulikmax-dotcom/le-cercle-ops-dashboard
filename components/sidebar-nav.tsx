@@ -57,10 +57,10 @@ export function SidebarNav({ variant }: SidebarNavProps) {
       <div className="border-b border-brass/15 pb-7">
         <p className="font-display text-3xl text-parchment">Le Cercle</p>
         <p className="mt-3 text-xs uppercase tracking-[0.22em] text-brass">
-          Ops Dashboard
+          Sistem operațional
         </p>
         <p className="mt-4 max-w-xs text-sm leading-6 text-pewter">
-          Internal operations for Le Cercle Group and Le Bureau events.
+          Module interne pentru date reale Le Cercle și Le Bureau.
         </p>
       </div>
 
@@ -99,7 +99,7 @@ export function SidebarNav({ variant }: SidebarNavProps) {
 
       <div className="border-t border-brass/15 pt-5">
         <p className="text-xs uppercase tracking-[0.18em] text-pewter">
-          Private Systems
+          Sistem privat
         </p>
         <p className="mt-2 text-sm text-parchment">Le Bureau Experience Events</p>
       </div>
